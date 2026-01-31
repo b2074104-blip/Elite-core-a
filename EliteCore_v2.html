@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Core — El Siguiente Nivel</title>
+    <meta name="description"
+        content="Centro de alto rendimiento en Andorra. Medicina deportiva, entrenamiento, recuperación y deportes de montaña.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+</head>
+
+<body>
+
+    <!-- SVG Filter for Liquid Animation -->
+    <svg style="position: fixed; top: -100%; opacity: 0; pointer-events: none;">
+        <filter id="liquid-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.01" numOctaves="3" result="noise" seed="2">
+                <animate attributeName="baseFrequency" values="0.01 0.01; 0.015 0.02; 0.01 0.01" dur="30s" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" />
+        </filter>
+    </svg>
+
+    <div id="liquid-bg"></div>
+
+
+    <!-- NAV -->
+    <nav class="nav-glass">
+        <a href="#" class="nav-brand">
+            ELITE <span style="color: var(--primary);">CORE</span>
+        </a>
+
+        <div class="nav-links desktop-menu" style="display: none; gap: 8px;">
+            <a href="#about">Nosotros</a>
+            <a href="#services">Servicios</a>
+            <a href="#sports">Deportes</a>
+            <a href="#plans">Planes</a>
+            <a href="#contact">Contacto</a>
+        </div>
+
+        <div style="display: flex; gap: 16px; align-items: center;">
+            <a href="#contact" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Reservar</a>
+            <button id="burger" style="background: none; border: none; color: white; display: none; cursor: pointer;">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18" /></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobileMenu" class="hidden"
+            style="position: absolute; top: 80px; left:0; width: 100%; background: #0a0a0a; padding: 20px; border-radius: 16px; border: 1px solid #333; display: flex; flex-direction: column; gap: 16px; display: none;">
+            <a href="#about">Nosotros</a>
+            <a href="#services">Servicios</a>
+            <a href="#sports">Deportes</a>
+            <a href="#plans">Planes</a>
+            <a href="#contact">Contacto</a>
+        </div>
+        <style>
+            @media(min-width: 900px) {
+                .desktop-menu {
+                    display: flex !important;
+                }
+
+                #burger {
+                    display: none !important;
+                }
+
+                #mobileMenu {
+                    display: none !important;
+                }
+            }
+        </style>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="hero-bg"></div>
+        <!-- Animated Background Orbs -->
+        <div class="floating-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <!-- Particles -->
+        <!-- Particles (CSS Bubbles) -->
+        <div class="particlesContainer">
+            <div class="bubbles">
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:24"></span>
+                <span style="--i:10"></span>
+                <span style="--i:14"></span>
+                <span style="--i:23"></span>
+                <span style="--i:18"></span>
+                <span style="--i:16"></span>
+                <span style="--i:19"></span>
+                <span style="--i:20"></span>
+                <span style="--i:22"></span>
+                <span style="--i:25"></span>
+                <span style="--i:18"></span>
+                <span style="--i:21"></span>
+                <span style="--i:15"></span>
+                <span style="--i:13"></span>
+                <span style="--i:26"></span>
+                <span style="--i:17"></span>
+                <span style="--i:13"></span>
+                <span style="--i:28"></span>
+            </div>
+        </div>
+
+        <div class="container" style="z-index: 2; position: relative;">
+            <div class="hero-content fade-in">
+                <div class="badge badge-purple" style="margin-bottom: 16px;">Centro de Alto Rendimiento — Andorra</div>
+                <h1>La mayor victoria es <span class="text-gradient" id="typewriter">vencerse a sí mismo.</span><span
+                        class="cursor">|</span></h1>
+                <p>Medicina deportiva, entrenamiento de élite y recuperación en un ecosistema único. Diseñado para
+                    atletas que buscan resultados reales.</p>
+                    <br>
+                    
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary">Agendar Visita</a>
+                    <a href="#sports" class="btn btn-outline">Ver Deportes</a>
+                </div>
+
+                <div style="margin-top: 40px; margin-bottom: 40px; display: inline-flex; align-items: center; gap: 16px; background: rgba(255,255,255,0.05); padding: 12px 30px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                    <div class="ringing-icon" style="background: var(--primary); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px var(--primary-glow);">
+                        <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </div>
+                    <a href="tel:+34640862859" style="font-size: 1.5rem; font-weight: 800; letter-spacing: 0.05em; color: white; text-decoration: none;">640 86 28 59</a>
+                </div>
+
+                <div style="margin-top: 60px; display: flex; flex-wrap: wrap; gap: 40px; color: var(--text-muted); font-size: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 32px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="check-animated delay-check-1">✓</span> Medicina Deportiva
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="check-animated delay-check-2">✓</span> Piscina Olímpica
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span class="check-animated delay-check-3">✓</span> Recuperación Spa
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOW IT WORKS -->
+    <section id="about" style="padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Cómo Funciona Elite Core</h2>
+                <p style="color: var(--text-muted);">Un proceso estructurado para garantizar tu evolución.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step-card">
+                    <h3>Evaluación</h3>
+                    <p style="color: var(--text-muted);">Diagnóstico inicial completo. Evaluamos tu estado físico,
+                        lesiones previas y objetivos a corto y largo plazo.</p>
+                </div>
+                <div class="step-card">
+                    <h3>Plan</h3>
+                    <p style="color: var(--text-muted);">Diseñamos una estrategia a medida combinando nutrición,
+                        entrenamiento de fuerza y medicina deportiva.</p>
+                </div>
+                <div class="step-card">
+                    <h3>Acción & Resultados</h3>
+                    <p style="color: var(--text-muted);">Entrena en nuestras instalaciones premium con seguimiento
+                        constante para asegurar tu progreso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPORTS & SERVICES -->
+    <section id="services" style="padding: 100px 0; background: rgba(255,255,255,0.02);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 48px;">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 8px;">Nuestros Espacios</h2>
+                    <p style="color: var(--text-muted); max-width: 500px;">Todo lo que necesitas en un mismo ecosistema.
+                    </p>
+                </div>
+                <!-- <a href="#" class="btn btn-outline">Ver Galería Completa</a> -->
+            </div>
+
+            <div class="grid-3" id="sports">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="badge badge-purple" style="margin-bottom: 16px;">Outdoor</div>
+                    <h3>Montaña & Resistencia</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Salidas de trail running, mountain bike y
+                        esquí de fondo en el corazón de Andorra.</p>
+                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: grid; gap: 8px;">
+                        <li>Rutas guiadas</li>
+                        <li>Preparación física específica</li>
+                    </ul>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="badge badge-purple" style="margin-bottom: 16px;">Combate</div>
+                    <h3>Deportes de Contacto</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Tatamis profesionales, ring de boxeo y
+                        zona de sacos.</p>
+                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: grid; gap: 8px;">
+                        <li>MMA y Boxeo</li>
+                        <li>Jiu Jitsu y Judo</li>
+                    </ul>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="badge badge-purple" style="margin-bottom: 16px;">Agua</div>
+                    <h3>Zona Acuática</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Piscina olímpica de 50m y piscina de
+                        calentamiento.</p>
+                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: grid; gap: 8px;">
+                        <li>Natación profesional</li>
+                        <li>Waterpolo</li>
+                    </ul>
+                </div>
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="badge badge-purple" style="margin-bottom: 16px;">Salud</div>
+                    <h3>Medicina Deportiva</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Equipo multidisciplinar para cuidar tu
+                        salud.</p>
+                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: grid; gap: 8px;">
+                        <li>Fisioterapia y Osteopatía</li>
+                        <li>Pruebas de esfuerzo</li>
+                    </ul>
+                </div>
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="badge badge-purple" style="margin-bottom: 16px;">Bienestar</div>
+                    <h3>Recuperación</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Zona de spa y relax para optimizar tu
+                        descanso.</p>
+                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: grid; gap: 8px;">
+                        <li>Sauna y Baño Turco</li>
+                        <li>Sesiones de movilidad</li>
+                    </ul>
+                </div>
+                <!-- Card 6 -->
+                <div class="card">
+                    <div class="badge badge-purple" style="margin-bottom: 16px;">Fuerza</div>
+                    <h3>Gimnasio & Crossfit</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Equipamiento de última generación para
+                        fuerza y acondicionamiento.</p>
+                    <ul style="color: var(--text-muted); font-size: 0.9rem; display: grid; gap: 8px;">
+                        <li>Halterofilia</li>
+                        <li>Entrenamiento funcional</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="plans" style="padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Planes Flexibles</h2>
+                <p style="color: var(--text-muted);">Desde pases de un día hasta preparación de atletas.</p>
+            </div>
+
+            <div class="grid-3">
+                <!-- Plan 1 (Monthly) -->
+                <div class="pricing-card featured">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4>Mensual</h4>
+                        <span class="badge badge-purple">Popular</span>
+                    </div>
+                    <div class="price"><span class="old-price">50€</span> 34€<span
+                            style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/mes</span></div>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Pago mes a mes. Sin permanencia.</p>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Empezar Ahora</a>
+                    <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 24px 0;">
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> Todo lo del pase diario</li>
+                        <li><span class="check-icon">✓</span> 1 sesión de fisio al mes</li>
+                        <li><span class="check-icon">✓</span> Acceso ilimitado</li>
+                    </ul>
+                </div>
+
+                <!-- Plan 2 (Annual) -->
+                <div class="pricing-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4>Anual</h4>
+                        <span class="badge" style="background: #ef4444; color: white;">-80%</span>
+                    </div>
+                    <div class="price"><span class="old-price" style="font-size: 1.5rem;">408€</span> 82€<span
+                            style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/año</span></div>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Pago único anual. La opción más
+                        inteligente.</p>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Elegir Anual</a>
+                    <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 24px 0;">
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> <b>Equivale a 6.8€/mes</b></li>
+                        <li><span class="check-icon">✓</span> Matrícula Gratis</li>
+                        <li><span class="check-icon">✓</span> Prioridad en reservas</li>
+                    </ul>
+                </div>
+
+                <!-- Plan 3 (Personalized) -->
+                <div class="pricing-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4>Personalizado</h4>
+                        <span class="badge" style="background: var(--text-muted); color: white;">A medida</span>
+                    </div>
+                    <div class="price" style="font-size: 2.2rem;">Consultar</div>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Para los más exigentes o indecisos.
+                        Diseñamos tu plan ideal.</p>
+                    <a href="#contact" class="btn btn-outline" style="width: 100%;">Contactar</a>
+                    <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 24px 0;">
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> Planificación 100% a medida</li>
+                        <li><span class="check-icon">✓</span> Doble sesión de fisio</li>
+                        <li><span class="check-icon">✓</span> Entrenador Personal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (Static Grid) -->
+    <section style="padding: 100px 0; background: linear-gradient(to bottom, transparent, var(--bg-card));">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 48px;">Lo que dicen nuestros atletas nos importa:</h2>
+
+            <div class="grid-2">
+                <div class="testimonial-card">
+                    <div style="color: var(--primary); font-size: 1.5rem; margin-bottom: 12px;">★★★★★</div>
+                    <p class="text-muted" style="margin-bottom: 16px;">"Las instalaciones son de otro nivel. La zona de
+                        recuperación es clave."</p>
+                    <b>— Marc G.</b> Trail Runner
+                </div>
+                <div class="testimonial-card">
+                    <div style="color: var(--primary); font-size: 1.5rem; margin-bottom: 12px;">★★★★★</div>
+                    <p class="text-muted" style="margin-bottom: 16px;">"He mejorado muchísimo mi Judo gracias al equipo
+                        médico."</p>
+                    <b>— Ana S.</b> Judoka
+                </div>
+                <div class="testimonial-card">
+                    <div style="color: var(--primary); font-size: 1.5rem; margin-bottom: 12px;">★★★★★</div>
+                    <p class="text-muted" style="margin-bottom: 16px;">"Profesionalidad pura. Aquí se viene a entrenar
+                        de verdad."</p>
+                    <b>— Carlos P.</b> Crossfit
+                </div>
+                <div class="testimonial-card">
+                    <div style="color: var(--primary); font-size: 1.5rem; margin-bottom: 12px;">★★★★★</div>
+                    <p class="text-muted" style="margin-bottom: 16px;">"El mejor centro de Andorra sin duda alguna."</p>
+                    <b>— Laura M.</b> Triatleta
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Empieza tu cambio</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Rellena el formulario y nos
+                    pondremos en contacto contigo para agendar una visita o resolver dudas.</p>
+            </div>
+
+            <div class="grid-2" style="align-items: stretch;">
+                <!-- Left Column: Contact Info -->
+                <div
+                    style="background: var(--bg-card); padding: 32px; border-radius: var(--radius-md); border: 1px solid var(--border-light); height: 100%;">
+                    <h4 style="margin-bottom: 24px; font-size: 1.5rem;">Información de Contacto</h4>
+                    <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 32px;">
+
+                        <!-- Phone -->
+                        <div>
+                            <label
+                                style="color: white; font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 4px;">Teléfono</label>
+                            <a href="tel:+34640862859"
+                                style="color: var(--text-muted); text-decoration: underline; transition: color 0.2s;">640
+                                86 28 59</a>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label
+                                style="color: white; font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 4px;">Email</label>
+                            <a href="mailto:Elitecore@elitecore.com"
+                                style="color: var(--text-muted); text-decoration: underline; transition: color 0.2s;">
+                                <span id="email-typewriter"></span><span class="cursor">|</span>
+                            </a>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div>
+                            <label
+                                style="color: white; font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 4px;">Instagram</label>
+                            <a href="#"
+                                style="color: var(--text-muted); text-decoration: underline; transition: color 0.2s;">@EliteCore_Andorra</a>
+                        </div>
+
+                        <!-- Location -->
+                        <div>
+                            <label
+                                style="color: white; font-weight: 600; font-size: 0.9rem; display: block; margin-bottom: 4px;">Ubicación</label>
+                            <span style="color: var(--text-muted);">Av. de Salou, 105, Andorra</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                        <a href="#contact" class="btn btn-primary"
+                            style="padding: 10px 20px; font-size: 0.9rem;">Reservar visita guiada</a>
+                        <a href="https://wa.me/34640862859" target="_blank" class="btn"
+                            style="background: rgba(37, 211, 102, 0.1); color: #25D366; border: 1px solid rgba(37, 211, 102, 0.2); padding: 10px 20px; font-size: 0.9rem;">WhatsApp</a>
+                        <a href="tel:+34640862859" class="btn btn-outline"
+                            style="padding: 10px 20px; font-size: 0.9rem;">Llamar</a>
+                    </div>
+                </div>
+
+
+                <!-- Right Column: Form -->
+                <div
+                    style="background: var(--bg-card); padding: 32px; border-radius: var(--radius-md); border: 1px solid var(--border-light); height: 100%;">
+                    <form>
+                        <div style="display: grid; gap: 16px;">
+                            <div>
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Nombre</label>
+                                <input type="text" id="name-input" placeholder=""
+                                    style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-light); border-radius: 8px; color: white;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Teléfono</label>
+                                <input type="tel" id="phone-input" placeholder=""
+                                    style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-light); border-radius: 8px; color: white;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 12px; font-weight: 500;">¿Qué te
+                                    interesa?</label>
+                                <div class="chips-grid">
+                                    <label class="chip">
+                                        <input type="checkbox" value="Medicina deportiva">
+                                        <div class="chip-content">
+                                            <b>Medicina deportiva</b>
+                                            <span>Evaluación y pruebas</span>
+                                        </div>
+                                    </label>
+                                    <label class="chip">
+                                        <input type="checkbox" value="Entrenamiento">
+                                        <div class="chip-content">
+                                            <b>Entrenamiento</b>
+                                            <span>Fuerza & Crossfit</span>
+                                        </div>
+                                    </label>
+                                    <label class="chip">
+                                        <input type="checkbox" value="Deportes de contacto">
+                                        <div class="chip-content">
+                                            <b>Contacto</b>
+                                            <span>MMA, Boxeo, Judo</span>
+                                        </div>
+                                    </label>
+                                    <label class="chip">
+                                        <input type="checkbox" value="Resistencia">
+                                        <div class="chip-content">
+                                            <b>Resistencia</b>
+                                            <span>Trail, Ski, Bike</span>
+                                        </div>
+                                    </label>
+                                    <label class="chip">
+                                        <input type="checkbox" value="Piscina">
+                                        <div class="chip-content">
+                                            <b>Piscina</b>
+                                            <span>Olímpica 50m</span>
+                                        </div>
+                                    </label>
+                                    <label class="chip">
+                                        <input type="checkbox" value="Recuperación">
+                                        <div class="chip-content">
+                                            <b>Recuperación</b>
+                                            <span>Spa & Fisioterapia</span>
+                                        </div>
+                                    </label>
+                                    <label class="chip">
+                                        <input type="checkbox" value="Seguro">
+                                        <div class="chip-content">
+                                            <b>Seguro</b>
+                                            <span>Cobertura x días</span>
+                                        </div>
+                                    </label>
+                                    <label class="chip">
+                                        <input type="checkbox" value="Visita guiada">
+                                        <div class="chip-content">
+                                            <b>Visita guiada</b>
+                                            <span>Ver instalaciones</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Mensaje</label>
+                                <textarea rows="4" placeholder="¿Cómo podemos ayudarte?"
+                                    style="width: 100%; padding: 12px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-light); border-radius: 8px; color: white;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIFIED FOOTER -->
+    <footer>
+        <div class="footer-glass">
+            <a href="#" class="nav-brand" style="font-size: 1.2rem;">
+                ELITE <span style="color: var(--primary);">CORE</span>
+            </a>
+
+            <div style="display: flex; gap: 24px;">
+                <a href="#services">Servicios</a>
+                <a href="#about">Nosotros</a>
+                <a href="#contact">Contacto</a>
+                <a href="javascript:void(0)" onclick="openModal('legal-modal')">Aviso Legal</a>
+                <a href="javascript:void(0)" onclick="openModal('privacy-modal')">Privacidad</a>
+            </div>
+
+            <div style="color: var(--text-muted); font-size: 0.8rem;">
+                © 2026 Elite Core. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+    <div id="legal-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('legal-modal')">&times;</button>
+            <h2>Aviso Legal</h2>
+            <h3>1. Información General</h3>
+            <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se detallan los datos de la empresa: Elite Core Andorra, con domicilio en Av. de Salou, 105, Andorra.</p>
+            <h3>2. Propiedad Intelectual</h3>
+            <p>Los derechos de propiedad intelectual del contenido de las páginas web, su diseño gráfico y códigos son titularidad de Elite Core y, por tanto, queda prohibida su reproducción, distribución, comunicación pública, transformación o cualquier otra actividad.</p>
+            <h3>3. Responsabilidad</h3>
+            <p>Elite Core no se hace responsable de las pérdidas o daños que pueda ocasionar al usuario por virus, indisponibilidad o cualquier otro comportamiento anómalo de la página web.</p>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('privacy-modal')">&times;</button>
+            <h2>Política de Privacidad</h2>
+            <h3> Protección de Datos</h3>
+            <p>Elite Core garantiza la protección y confidencialidad de los datos personales, de cualquier tipo que nos proporcionen nuestras empresas clientes de acuerdo con lo dispuesto en el Reglamento General de Protección de Datos.</p>
+            <h3> Finalidad del Tratamiento</h3>
+            <p>Los datos proporcionados a través del formulario de contacto serán utilizados única y exclusivamente para gestionar su solicitud de información, agendar visitas guiadas y prestar los servicios solicitados.</p>
+            <h3> Derechos del Usuario</h3>
+            <p>Usted tiene derecho a obtener confirmación sobre si en Elite Core estamos tratando sus datos personales, por tanto tiene derecho a acceder a sus datos personales, rectificar los datos inexactos o solicitar su supresión cuando los datos ya no sean necesarios.</p>
+        </div>
+    </div>
+
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>
