@@ -1,0 +1,48 @@
+:root {
+    /* Branding Colors */
+    --primary: #7c3aed;
+    --primary-light: #a855f7;
+    --primary-dark: #6d28d9;
+    --primary-glow: rgba(124, 58, 237, 0.5);
+
+    --success: #10b981;
+    --success-glow: rgba(16, 185, 129, 0.3);
+
+    --bg-dark: #050505;
+    --bg-card: rgba(255, 255, 255, 0.05);
+    --bg-card-hover: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.1);
+
+    /* Text Colors */
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --text-highlight: #e9d5ff;
+
+    /* Typography */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', system-ui, sans-serif;
+
+    /* Spacing & Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows & Effects */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 40px -5px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 30px rgba(124, 58, 237, 0.15);
+    
+    /* Backgrounds */
+    --bg-dark: #030305;
+    --bg-mesh: 
+        radial-gradient(circle at 50% 0%, rgba(120, 50, 220, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 85% 30%, rgba(100, 40, 200, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, #030305 0%, #0a0a0f 100%);
+
+    /* Transitions */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-tilt: cubic-bezier(0.03, 0.98, 0.52, 0.99);
+}
